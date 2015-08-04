@@ -19,7 +19,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <meta charset="utf-8">
 
   <!-- Tells the browser what the title of this page should be. -->
-  <title>Resume</title>
+  <title>Ivan's Resume</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
   <!-- Load the page styles. -->
   <link href="css/style.css" rel="stylesheet">
@@ -46,13 +48,23 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
   -->
-<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
+  <nav class="nav">
+      <ul>
+        <li class="nav-item"><a href="#workExperience">Work Experience</a></li>
+        <li class="nav-item"><a href="#projects">Projects</a></li>
+        <li class="nav-item"><a href="#education">Education</a></li>
+        <li class="nav-item"><a href="#map-div">Places</a></li>
+        <li class="nav-item"><a href="#lets-connect">Connect</a></li>
+      </ul>
+  </nav>
   <div id="main">
-    Hello world!   <!-- You'll be deleting this line in the course -->
+    <span id="menu" class="fontawesome-align-right icon"></span>
+    <!-- You'll be deleting this line in the course -->
 
     <!--
     Everything from here to the <script> tag below is the skeleton of your
@@ -65,13 +77,13 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     </div>
     <div style="clear: both;"></div>
     <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
+      <h2 class="blue-header">Work Experience</h2>
     </div>
     <div id="projects">
       <h2>Projects</h2>
     </div>
     <div id="education" class="gray">
-      <h2>Education</h2>
+      <h2 class="blue-header">Education</h2>
     </div>
     <div id="map-div">
       <h2>Where I've Lived and Worked</h2>
@@ -83,6 +95,23 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     </div>
   </div>
 
+<script>
+      /*
+       * Open the drawer when the menu ison is clicked.
+       */
+      var menu = document.querySelector('#menu');
+      var body = document.querySelector('body');
+      var drawer = document.querySelector('.nav');
+
+      menu.addEventListener('click', function(e) {
+        drawer.classList.toggle('open');
+        e.stopPropagation();
+      });
+      body.addEventListener('click', function() {
+        drawer.classList.remove('open');
+      });
+
+    </script>
   <!--
   The next line tells the browser where to download the JavaScript file you'll be
   writing. In resumeBuilder.js, you'll be writing code that builds the resume

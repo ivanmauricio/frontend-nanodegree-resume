@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
 body,
 div,
 ul,
@@ -11,7 +18,7 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .clear-fix {
@@ -24,9 +31,17 @@ h6 {
   padding: 0 5%;
 }
 
+#main {
+  background-color: #1A1AA0;
+}
+
+body {
+  background-color: #5C8DF1;
+}
+
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: white;
   line-height: 48px;
   display: inline;
 }
@@ -34,7 +49,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: white;
   line-height: 29px;
   padding: 10px;
 }
@@ -61,11 +76,41 @@ h5 {
 
 }
 
+nav {
+  z-index: 0;
+  background-color: #5C8DF1;
+  top: 35vh;
+  text-align: center;
+  width: 170px;
+  position: fixed;
+  /* This trasform moves the drawer off canvas. */
+  -webkit-transform: translate(-170px, 0);
+  transform: translate(-170px, 0);
+  /* Optionally, we animate the drawer. */
+  transition: transform 0.3s ease;
+}
+
+.nav.open {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.icon {
+  position: absolute;
+  left: 75vw;
+  padding: 1em;
+  font-size: 2em;
+}
+
+.nav-item a {
+  color: white;
+  margin-left: 45px;
+}
 
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #f5ae23;
   line-height: 16px;
   float: left;
 }
@@ -73,7 +118,7 @@ h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #f5ae23;
   line-height: 16px;
   float: right;
 
@@ -81,12 +126,12 @@ h5 {
 
 p {
   font-size: 14px;
-  color: #333;
+  color: #1A1AA0;
   line-height: 21px;
 }
 
 a {
-  color: #1199c3;
+  color: #5C8DF1;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -104,8 +149,17 @@ a {
   display: none;
 }
 
+.blue-header {
+  color: #1A1AA0;
+}
+
 .orange {
-  background-color: #f5ae23;
+  background-color: white;
+  color: #1A1AA0;
+}
+
+.projectsText {
+  color: white;
 }
 
 .orange-text {
@@ -117,8 +171,12 @@ a {
   color: #fff;
 }
 
+em {
+  color: #1A1AA0;
+}
+
 .gray {
-  background-color: #f3f3f3;
+  background-color: white;
   padding-bottom: 10px;
   clear:both;
 }
@@ -129,7 +187,15 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #1A1AA0;
+}
+
+#footerContacts {
+  background-color: #1A1AA0;
+}
+
+#nameHeading {
+  color: #f5ae23;
 }
 
 .flex-box {
@@ -162,6 +228,7 @@ img {
 
 span {
   padding: 5px;
+  color: #f5ae23;
 }
 
 #lets-connect {
@@ -173,6 +240,10 @@ span {
 @media only screen and (max-width: 1024px) {
   #lets-connect {
     margin-top: 5%;
+  }
+
+  .nav-item a {
+    margin-left: 0;
   }
 }
 
@@ -192,6 +263,9 @@ span {
   .welcome-message {
     display: none;
   }
+  #name {
+    display: block;
+  }
 }
 
 #map {
@@ -210,5 +284,12 @@ span {
   #skills-h3,
   .biopic {
     display: block;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #main {
+    max-width: 70vw;
+    margin: 0 auto 0;
   }
 }
